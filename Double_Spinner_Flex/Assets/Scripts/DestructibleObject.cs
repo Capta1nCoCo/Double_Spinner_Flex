@@ -19,24 +19,7 @@ public class DestructibleObject : MonoBehaviour
     private void Awake()
     {
         allRigidBodies = GetComponentsInChildren<Rigidbody>();
-    }
-
-    
-
-    void Update()
-    {
-        //For Testing Purposes
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if(allRigidBodies.Length > 0)
-            {
-                foreach(Rigidbody rigidbody in allRigidBodies)
-                {
-                    rigidbody.AddExplosionForce(Random.Range(explosionForceMin, explosionForceMax), transform.position, explosionRadius);
-                }
-            }
-        }
-    }
+    }        
 
     private void OnTriggerEnter(Collider other)
     {

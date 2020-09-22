@@ -25,9 +25,5 @@ public class VacuumCleaner : MonoBehaviour
             Debug.DrawRay(other.transform.position, transform.position - other.transform.position);
         }
     }
-
-    private void Update()
-    {
-        transform.Translate(Vector3.forward * 5 * Time.deltaTime);
-    }
+    
 }
