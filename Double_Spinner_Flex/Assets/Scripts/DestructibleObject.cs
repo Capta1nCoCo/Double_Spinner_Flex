@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class DestructibleObject : MonoBehaviour
 {
+    [Header("Delays (in seconds)")]
+    [SerializeField] float delayBeforeExplosion = 0.4f;
+    [SerializeField] float delayBeforeRemoval = 0.4f;
+
     [Header("Explosion Properties")]
     [SerializeField] float explosionForceMin = 500f;
     [SerializeField] float explosionForceMax = 500f;
     [SerializeField] float explosionRadius = 30f;
+    
 
     Rigidbody[] allRigidBodies;
 
@@ -37,12 +42,24 @@ public class DestructibleObject : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            foreach (Rigidbody rigidbody in allRigidBodies)
-            {
-                if (rigidbody == null) { return; }
-                rigidbody.AddExplosionForce(Random.Range(explosionForceMin, explosionForceMax), transform.position, explosionRadius);
-                rigidbody.gameObject.tag = "Used";
-            }
+            StartCoroutine(WaitAndExplode());            
         }
+    }
+
+    IEnumerator WaitAndExplode()
+    {
+        yield return new WaitForSeconds(delayBeforeExplosion);
+        foreach (Rigidbody rigidbody in allRigidBodies)
+        {
+            //if (rigidbody == null) { return; }
+            rigidbody.AddExplosionForce(Random.Range(explosionForceMin, explosionForceMax), transform.position, explosionRadius);
+            StartCoroutine(WaitAndTagAsUsed(rigidbody));
+        }
+    }
+
+    IEnumerator WaitAndTagAsUsed(Rigidbody rigidbody)
+    {
+        yield return new WaitForSeconds(delayBeforeRemoval);
+        rigidbody.gameObject.tag = "Used";
     }
 }

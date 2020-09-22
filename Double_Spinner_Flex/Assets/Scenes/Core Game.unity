@@ -536,6 +536,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: e82b2ee6bd0963c4b95bb2b3ce3064f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: e82b2ee6bd0963c4b95bb2b3ce3064f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: e82b2ee6bd0963c4b95bb2b3ce3064f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: e82b2ee6bd0963c4b95bb2b3ce3064f3, type: 3}
       propertyPath: m_Controller
       value: 
@@ -2950,7 +2962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cad9f58b9f9e445b6c179634233b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GRAVITY_PULL: 1000
+  GRAVITY_PULL: 2000
 --- !u!135 &2089830610
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2963,7 +2975,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 70
-  m_Center: {x: 0, y: 0.51, z: -5.25}
+  m_Center: {x: 0, y: 0, z: 5}
 --- !u!1 &2093318143
 GameObject:
   m_ObjectHideFlags: 0
