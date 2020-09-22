@@ -6,6 +6,17 @@ public class Shredder : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if (other.GetComponent<Rigidbody>())
+        {
+            Destroy(other.gameObject);
+        }        
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<Rigidbody>())
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
