@@ -39,7 +39,9 @@ public class DestructibleObject : MonoBehaviour
         {
             foreach (Rigidbody rigidbody in allRigidBodies)
             {
+                if (rigidbody == null) { return; }
                 rigidbody.AddExplosionForce(Random.Range(explosionForceMin, explosionForceMax), transform.position, explosionRadius);
+                rigidbody.gameObject.tag = "Used";
             }
         }
     }

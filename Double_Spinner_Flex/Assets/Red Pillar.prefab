@@ -21290,6 +21290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2194319310479095230}
   - component: {fileID: 2194319310479095231}
+  - component: {fileID: 2398346513247106132}
   m_Layer: 0
   m_Name: Red Pillar
   m_TagString: Untagged
@@ -21531,8 +21532,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c342f2a20228c43963bf4dc1a56e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 40
+  explosionForceMin: 40
+  explosionForceMax: 70
   explosionRadius: 30
+--- !u!65 &2398346513247106132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2194319310479095224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7682333, y: 5.1754436, z: 2.7037401}
+  m_Center: {x: 0, y: 2.3898168, z: 0}
 --- !u!1 &2194319310530928383
 GameObject:
   m_ObjectHideFlags: 0
