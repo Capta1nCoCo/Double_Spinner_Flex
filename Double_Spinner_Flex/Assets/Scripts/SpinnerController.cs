@@ -51,6 +51,7 @@ public class SpinnerController : MonoBehaviour
         float clampedZPos = Mathf.Clamp(rawZPos, zMin, zMax);
 
         spinnerRed.position = new Vector3(clampedXPos, spinnerRed.position.y, clampedZPos);
+        spinnerYellow.position = new Vector3(-spinnerRed.position.x, spinnerYellow.position.y, spinnerRed.position.z);
     }
 
     private void SetUpMoveBoundaries()
