@@ -5,12 +5,12 @@ using UnityEngine;
 public class DestructibleObject : MonoBehaviour
 {
     [Header("Delays (in seconds)")]
-    [SerializeField] float delayBeforeExplosion = 0.4f;
+    [SerializeField] float delayBeforeExplosion = 0.17f;
     [SerializeField] float delayBeforeRemoval = 0.4f;
 
     [Header("Explosion Properties")]
-    [SerializeField] float explosionForceMin = 500f;
-    [SerializeField] float explosionForceMax = 500f;
+    [SerializeField] float explosionForceMin = 40f;
+    [SerializeField] float explosionForceMax = 70f;
     [SerializeField] float explosionRadius = 30f;
     
 
@@ -26,7 +26,8 @@ public class DestructibleObject : MonoBehaviour
         if (other.tag == "Player")
         {
             Destroy(GetComponent<BoxCollider>());
-            StartCoroutine(WaitAndExplode());            
+            StartCoroutine(WaitAndExplode());
+            Destroy(gameObject, 2f);
         }
     }
 
@@ -37,6 +38,7 @@ public class DestructibleObject : MonoBehaviour
         {
             if(rigidbody != null)
             {
+                rigidbody.useGravity = true;
                 rigidbody.AddExplosionForce(Random.Range(explosionForceMin, explosionForceMax), transform.position, explosionRadius);
                 StartCoroutine(WaitAndTagAsUsed(rigidbody));
             }            
