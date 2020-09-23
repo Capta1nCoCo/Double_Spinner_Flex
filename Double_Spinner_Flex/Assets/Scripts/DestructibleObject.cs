@@ -25,6 +25,7 @@ public class DestructibleObject : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Destroy(GetComponent<BoxCollider>());
             StartCoroutine(WaitAndExplode());            
         }
     }
@@ -34,15 +35,20 @@ public class DestructibleObject : MonoBehaviour
         yield return new WaitForSeconds(delayBeforeExplosion);
         foreach (Rigidbody rigidbody in allRigidBodies)
         {
-            //if (rigidbody == null) { return; }
-            rigidbody.AddExplosionForce(Random.Range(explosionForceMin, explosionForceMax), transform.position, explosionRadius);
-            StartCoroutine(WaitAndTagAsUsed(rigidbody));
+            if(rigidbody != null)
+            {
+                rigidbody.AddExplosionForce(Random.Range(explosionForceMin, explosionForceMax), transform.position, explosionRadius);
+                StartCoroutine(WaitAndTagAsUsed(rigidbody));
+            }            
         }
     }
 
     IEnumerator WaitAndTagAsUsed(Rigidbody rigidbody)
     {
         yield return new WaitForSeconds(delayBeforeRemoval);
-        rigidbody.gameObject.tag = "Used";
+        if(rigidbody != null)
+        {
+            rigidbody.gameObject.tag = "Used";
+        }        
     }
 }
