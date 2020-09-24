@@ -8635,6 +8635,7 @@ GameObject:
   - component: {fileID: 2300048869313475414}
   - component: {fileID: 2300048869313475409}
   - component: {fileID: 2300048869313475408}
+  - component: {fileID: 685204861423725743}
   m_Layer: 0
   m_Name: Red Pillar
   m_TagString: Untagged
@@ -8894,6 +8895,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7682333, y: 5.1754436, z: 2.7037401}
   m_Center: {x: 0, y: 2.3898168, z: 0}
+--- !u!114 &685204861423725743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2300048869313475411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa295edee92143e49bc0c7d3009145e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePopupPrefab: {fileID: 6803511730524772715, guid: d846808ca10354c43a2ced42329b8559, type: 3}
+  flyUpSpeed: 20
 --- !u!1 &2300048869320351202
 GameObject:
   m_ObjectHideFlags: 0

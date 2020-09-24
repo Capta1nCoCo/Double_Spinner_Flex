@@ -5835,6 +5835,7 @@ GameObject:
   - component: {fileID: 7937680910796943287}
   - component: {fileID: 4506923668372991610}
   - component: {fileID: 3989615542621977017}
+  - component: {fileID: 2534163327991433228}
   m_Layer: 0
   m_Name: Horizontal Pillar
   m_TagString: Untagged
@@ -6094,6 +6095,20 @@ MonoBehaviour:
   explosionForceMin: 40
   explosionForceMax: 70
   explosionRadius: 30
+--- !u!114 &2534163327991433228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2526862898368945389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa295edee92143e49bc0c7d3009145e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePopupPrefab: {fileID: 6803511730524772715, guid: d846808ca10354c43a2ced42329b8559, type: 3}
+  flyUpSpeed: 20
 --- !u!1 &2529515516908894957
 GameObject:
   m_ObjectHideFlags: 0
