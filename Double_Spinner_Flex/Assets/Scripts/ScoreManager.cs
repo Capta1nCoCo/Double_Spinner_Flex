@@ -11,6 +11,10 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        if (FindObjectOfType<FinalFigure>())
+        {
+            score = PlayerPrefs.GetInt("playerScore");
+        }
         scoreText.text = score.ToString();
     }
 
