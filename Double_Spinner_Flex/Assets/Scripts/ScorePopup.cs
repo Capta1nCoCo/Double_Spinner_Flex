@@ -24,7 +24,7 @@ public class ScorePopup : MonoBehaviour
         var scorePopUp = Instantiate(scorePopupPrefab, new Vector3(transform.position.x, transform.position.y + offset, transform.position.z + offset), Quaternion.identity);
         int scoreValue = Random.Range(minScoreNum, maxScoreNum);
         scorePopUp.text = "+" + scoreValue.ToString();
-        scorePopUp.transform.Translate(Vector3.up * flyUpSpeed * Time.deltaTime);
+        //scorePopUp.transform.Translate(Vector3.up * flyUpSpeed * Time.deltaTime);
         scoreManager.AddToScore(scoreValue);
         Destroy(scorePopUp.gameObject, 1f);
     }
