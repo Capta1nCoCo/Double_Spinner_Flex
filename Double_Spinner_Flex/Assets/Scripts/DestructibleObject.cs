@@ -15,16 +15,19 @@ public class DestructibleObject : MonoBehaviour
     
 
     Rigidbody[] allRigidBodies;
+    ScorePopup scorePopup;
 
     private void Awake()
     {
         allRigidBodies = GetComponentsInChildren<Rigidbody>();
+        scorePopup = GetComponent<ScorePopup>();
     }        
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            scorePopup.PopUpScoreNumber();
             Destroy(GetComponent<BoxCollider>());
             StartCoroutine(WaitAndExplode());
             Destroy(gameObject, 2f);

@@ -8,6 +8,7 @@ public class ScorePopup : MonoBehaviour
     [SerializeField] TextMeshPro scorePopupPrefab;
     [SerializeField] float flyUpSpeed = 20f;
 
+    float offset = 10f;
     int minScoreNum = 100;
     int maxScoreNum = 200;
 
@@ -20,7 +21,7 @@ public class ScorePopup : MonoBehaviour
 
     public void PopUpScoreNumber()
     {
-        var scorePopUp = Instantiate(scorePopupPrefab, transform.position, Quaternion.identity);
+        var scorePopUp = Instantiate(scorePopupPrefab, new Vector3(transform.position.x, transform.position.y + offset, transform.position.z + offset), Quaternion.identity);
         int scoreValue = Random.Range(minScoreNum, maxScoreNum);
         scorePopUp.text = "+" + scoreValue.ToString();
         scorePopUp.transform.Translate(Vector3.up * flyUpSpeed * Time.deltaTime);
