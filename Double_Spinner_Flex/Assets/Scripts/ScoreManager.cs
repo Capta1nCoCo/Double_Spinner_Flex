@@ -7,14 +7,22 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
     
-    int score;   
+    int score;
 
-    private void Start()
+    private void Awake()
     {
         if (FindObjectOfType<FinalFigure>())
         {
             score = PlayerPrefs.GetInt("playerScore");
         }
+        else
+        {
+            PlayerPrefs.SetInt("playerScore", 0);
+        }
+    }
+
+    private void Start()
+    {        
         scoreText.text = score.ToString();
     }
 

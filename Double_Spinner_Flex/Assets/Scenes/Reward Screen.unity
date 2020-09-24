@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 863542657}
   - component: {fileID: 863542656}
   m_Layer: 5
-  m_Name: Menu Button (TMP) (1)
+  m_Name: Menu Button (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
