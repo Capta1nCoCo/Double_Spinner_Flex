@@ -6,7 +6,6 @@ using TMPro;
 public class ScorePopup : MonoBehaviour
 {
     [SerializeField] TextMeshPro scorePopupPrefab;
-    [SerializeField] float flyUpSpeed = 20f;
 
     float offset = 10f;
     int minScoreNum = 100;

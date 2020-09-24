@@ -19,4 +19,9 @@ public class ScoreManager : MonoBehaviour
         score += amount;
         scoreText.text = score.ToString();
     }
+
+    void OnDisable()
+    {
+        PlayerPrefs.SetInt("playerScore", score);
+    }
 }
