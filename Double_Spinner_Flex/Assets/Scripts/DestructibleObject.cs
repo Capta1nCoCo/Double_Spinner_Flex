@@ -56,4 +56,10 @@ public class DestructibleObject : MonoBehaviour
             rigidbody.gameObject.tag = "Used";
         }        
     }
+
+    public void ForFinalDestruction()
+    {
+        StartCoroutine(WaitAndExplode());
+        Destroy(gameObject, 2f);
+    }
 }
