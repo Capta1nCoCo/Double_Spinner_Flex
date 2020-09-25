@@ -14576,7 +14576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3185873389301641060, guid: e05d3cadff6ad04489feed61cc08b874, type: 3}
       propertyPath: speedModifier
-      value: 0.017
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3185873389301641060, guid: e05d3cadff6ad04489feed61cc08b874, type: 3}
       propertyPath: zRayOffset
