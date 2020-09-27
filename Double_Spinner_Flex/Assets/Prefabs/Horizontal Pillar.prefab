@@ -6108,7 +6108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorePopupPrefab: {fileID: 6803511730524772715, guid: d846808ca10354c43a2ced42329b8559, type: 3}
-  flyUpSpeed: 20
 --- !u!1 &2529515516908894957
 GameObject:
   m_ObjectHideFlags: 0
